@@ -6,189 +6,256 @@
   text-decoration: none;
   list-style-type: none;
 }
-
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 h1 {
   background-color: #9900ff;
   color: white;
-  padding: 10px;
-  text-align:center;
-}
-
-.mainframe #index {
-  background-color: #ccccff;
-  border-right: solid grey 1px;
+  padding: 20px 0;
+  text-align: center;
+  height: 20px;
+  width: 100%;
+  position:absolute;
+  top:0;
   width:100%;
-  text-indent: 10px;
-  font-size: 26px;
-  line-height: 40px;
+  z-index:1;
+}
+#container {
+  width: 300%;
+  height: 100%;
+
   position: absolute;
+  left:0;
+  top: 0;
+  z-index: 10;
 }
-#allclass {
+.box{
+  height:60px;
+}
+.return {
+  position:absolute;
+  padding:5px;
+  background-color: #0000EE;
+  color:white;
+  left:5px;
+  top:30px;
+  z-index:2;
+  border:none;
+  border-radius: 5px;
+}
+#index {
+  border-right: solid grey 1px;
+  width: 33.3333%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 30px;
+  float: left;
+  overflow: auto;
+}
+#index ul {
+  margin-left: 5px;
+}
+.files1 span,
+#allitems {
   cursor: pointer;
 }
-#allclass em {
-  display: none;
+.files2 {
+  display: block;
 }
-.project {
-  cursor: pointer;
-}
-.project img {
-  position: relative;
-  margin: 0px 10px 0px 5px;
-  top: 5px;
-}
-.item {
-  background-color: #ccccff;
-}
-.item input {
- width: 20px;
- float:right;
-}
-.onitem input {
+.fileicon {
+  display: inline-block;
+  height: 20px;
   width: 20px;
-  float:right;
-}
-.onproject img {
+  margin: 0px 6px;
   position: relative;
-  margin: 0px 10px 0px 5px;
-  top: 5px;
+  top: 3px;
+  background-image: url("../img/file2.png");
 }
-.subclass img {
+.fileicon2 {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0px 6px;
   position: relative;
-  margin: 0px 10px 0px 15px;
+  top: 3px;
+  background-image: url("../img/file2.png");
+  margin-left: 10px;
+  background-image: url("../img/text2.png");
+}
+.delete {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  background-image: url("../img/delete.png");
+  float: right;
+}
+.blockitem {
+  display: inline-block;
+  width: 150px;
+}
+.adbtn {
+  cursor: pointer;
+  height: 25px;
+  border-top: solid grey 1px;
+  padding: 5px 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.adbtn input {
+  margin: 0 5px;
+  position: relative;
   top: 3px;
 }
-.addbtn {
-  border-top: solid black 1px;
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  line-height: 50px;
-}
-.addbtn img {
-  cursor: pointer;
-}
-#addclass {
-  border:none;
-  margin-right: 3px;
-  position:relative;
-  top:5px;
-}
-#addtask {
-  border:none;
-  margin: 0px 3px 0px 10px;
-  position:relative;
-  top:5px;
-}
-.delcls{
-	float:right;
-	border:none;
-	position:relative;
-  	top:7px;
-}
 #middle {
-  width: 100%;
+  width: 33.3333%;
+  height: 100%;
+  float: left;
   border-right: solid grey 1px;
-  background-color: #f8f9df;
-  font-size:24px;
-  display: none;
-}
-#midbtn {
-  background-color: #d0e691;
+  position:relative;
 }
 .midbtn {
-  width: 100px;
-  margin: 10px 5px;
-  font-size:24px;
-  border: none;
-  background-color: #ffffff;
+  background-color: #5cacee;
+  border: 1px solid #FFE1FF;
+  border-radius: 10px;
+  color: white;
+  width: 28.3333%;
+  margin: 5px 1%;
+}
+.midbtn:hover {
+  cursor: pointer;
+  border: 1px solid #FFF68F;
+  background-color: #63b8ff;
 }
 #tasks {
-  background-color: #f8f9df;
+  border-top: solid grey 1px;
+  height: 73%;
+  overflow: auto;
 }
-.task {
+.listdate {
+  padding: 5px;
+  border-bottom: 1px solid grey;
+}
+.taskdone,
+.taskundone {
   cursor: pointer;
+  color: blue;
+  padding: 5px;
 }
-.task em {
-  display: none;
+.taskdone:hover,
+.taskundone:hover {
+  background-color: #fff0f5;
 }
-.taskdate {
-  background-color: #daf3e2;
-}
-.taskdate span {
-  padding-left: 10px;
-}
-.taskdate li {
-  background-color: #f8f9df;
-  padding: 3px 0px;
-  padding-left: 15px;
+.taskundone {
+  cursor: pointer;
+  color: red;
 }
 #textright {
-  background-color: #e2f1f3;
-  display: none;
+  height: 100%;
+  width:33%;
+  float:left;
+  position:relative;
 }
-#tasktittle {
-  padding: 0 50px 0 10px;
-  background-color: #a5e0ef;
-  line-height: 40px;
-  height: 40px;
+#textright div {
+  padding: 5px;
 }
-#tasktittle .invisible {
-  display: none;
-}
-#tasktittle .editbtn {
-  width: 20px;
-  margin: 10px;
+.editbtn {
   float: right;
+  border: none;
+  margin: 0 20px;
+}
+.editdetail #edititle,
+.editdetail #editdate {
+  width: 50%;
+  margin-left: 2%;
+  padding: 3px;
+  display: inline-block;
+}
+.editdetail .savebtn {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #4f94cd;
+  font-size: 16px;
+  color: white;
+  border-radius: 10px;
+}
+.editdetail #edittext {
+  display: blcok;
+  width: 80%;
+  padding: 5px;
+  height: 200px;
+  margin: 2% 7%;
+}
+.editdetail p,
+.editdetail span,
+.editdetail .editbtn {
   display: none;
 }
-.edittask {
-  display: none;
-  color: grey;
+.editdetail .textnote {
+  display: inline-block;
 }
-.invisible {
+.editdetail .textinfo {
+  display: block;
+}
+.loadetail .editask,
+.loadetaildone .editask,
+.loadetail .savebtn,
+.loadetaildone .savebtn {
   display: none;
 }
-#taskdate {
-  padding-left: 10px;
-  background-color: #d3e7ef;
-  line-height: 40px;
-  height: 40px;
+.loadetail p,
+.loadetaildone p {
+  display: block;
+}
+.loadetail span,
+.loadetaildone span {
+  display: inline-block;
+}
+.loadetail .textnote,
+.loadetaildone .textnote,
+.loadetail .textinfo,
+.loadetaildone .textinfo {
+  display: none;
+}
+.loadetail .editbtn {
+  display: inline-block;
+}
+.loadetaildone .editbtn {
+  display: none;
 }
 #tasktext {
   padding: 20px;
-  background-color: #e2f1f3;
+  margin-top: 30px;
 }
-#tasktext .savebtn {
-  width: 40px;
-  margin-top: 20px;
-  margin-right: 20px;
-  float: right;
-  display: none;
-}
-#popBox {
+.popBox {
   padding: 20px;
   width: 180px;
   border: 1px solid #cfcfcf;
   box-shadow: 2px 3px 0 rgba(190, 190, 190, 0.3);
   background-color: #fadef9;
   z-index: 101;
-  display: none;
-  position: fixed;
-  left: 30px;
-  top: 20px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin-left: -90px;
+  margin-top: -50px;
 }
-#popBox .newcls {
+.popBox .newcls {
   margin-bottom: 10px;
   width: 170px;
   display: block;
 }
-#popBox .newbtn {
+.popBox .newbtn {
   width: 40px;
   margin: 10px 18px 0px;
+  padding: 5px;
+  background-color: #eee9bf;
 }
-#mask {
+.mask {
   width: 100%;
   height: 100%;
   background-color: #000000;
@@ -197,15 +264,8 @@ h1 {
   top: 0px;
   left: 0px;
   z-index: 50;
+}
+.invisible {
   display: none;
 }
-.return{
-	background-color:#90F;
-	font-size:20px;
-	border:none;
-	color:white;
-	position:fixed;
-	top:25px;
-	left:15px;
-	z-index:10;
-}
+

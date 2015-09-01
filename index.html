@@ -1,60 +1,71 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" type="text/css" media="screen and (max-width: 479px)" href="css/task3mobile.css" />
-<link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="css/task3.css" />
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" media="screen and (max-width: 699px)" href="css/task3mobile.css" />
+        <link rel="stylesheet" type="text/css" media="screen and (min-width: 700px)" href="css/task3.css" />
 
-<title>GTD</title>
-</head>
+        <title>GTD</title>
+    </head>
+    <body>
+        <h1>GTD Tools</h1>
+        <div id='container'>
+            <div id='index'>
+                <div class="box"></div>
+            	<ul id="allitems">所有任务
+                </ul>      
+                <ul id="classify">分类列表
+                </ul>  
+                
+                <div class='adbtn'>
+                    <input type='image' id='adcls' src="img/new.png" width='20px'/>新建分类
+                </div>
+            </div>
 
-<body>
-    <h1>GTD Tools</h1>
-    <div class='mainframe'>
-        <div id='index' class='mainclass'>
-        	<ul id="allclass"><span></span></ul>      
-            <ul id="classify"><span></span></ul>  
-            <div class='addbtn'>
-                <input type="submit" id='addclass' value='' style="background:url('img/new.png') no-repeat; width:30px; height:30px;">新建分类
+            <div id='middle'>
+                <div class="box"></div>
+                <input type='submit' id='return1' class='return' value='<返回1'/>
+                <div>
+                    <input type='submit' id='alltask' class='midbtn' value='所有'/>
+                    <input type='submit' id='doing' class='midbtn' value='未完成'/>
+                    <input type='submit' id='done' class='midbtn' value='已完成'/>
+                </div>
+                <div id='tasks'></div>
+                
+                <div class='adbtn'>
+                    <input type='image' id='adtsk' src="img/new.png" width='20px'/>新建任务
+                </div>
+            </div>
+
+            <div id='textright' class='loadetail'>
+                <div class="box"></div>
+                <input type='submit' id='return2' class='return' value='<返回2'/>
+                <div id='tasktitle'>
+                    <span class='textnote'>请输入任务名称</span>
+                    <input type='text' id='edititle' class='editask'/>
+                    <span id="loadtitle"></span>
+                    <input type='image' id='finish' class='editbtn' src="img/finish2.png" width='20px'/>
+                    <input type='image' id='edit' class='editbtn' src="img/edit2.png" width='20px'/>
+                </div>
+                <div id='taskdate'>
+                    <span class='textnote'>请输入完成日期</span>
+                    <input type='text' id='editdate' class='editask'/>
+                    <span id="loadate"></span>
+                </div>
+                <div id='tasktext'>  
+                    <span class='textinfo'>请输入任务详细内容<br></span>
+                    <textarea id="edittext" class='editask'></textarea> 
+                    <p id="loadtext"></p>
+                    <div>
+                        <input type='submit' id='cancel' class='savebtn' value='取消'/>
+                        <input type='submit' id='save' class='savebtn' value='保存'/>
+                    </div>
+                </div>
             </div>
         </div>
         
-        <div id='middle'>
-        	<input type='submit' id='return1' class='return' value='<返回'/>
-            <div id='midbtn'>
-                 <input type='submit' id='alltask' class='midbtn' value='所有'/>
-                 <input type='submit' id='doing' class='midbtn' value='未完成'/>
-                 <input type='submit' id='done' class='midbtn' value='已完成'/>
-            </div>
-            <div id='tasks'>
-            </div>
-            
-             <div class='addbtn'>
-                <input type="submit" id='addtask' value='' style="background:url('img/new.png') no-repeat; width:30px; height:30px;">新增任务
-            </div>
-        </div>
-        <div id='textright'>
-        	<input type='submit' id='return2' class='return' value='<返回'/>
-            <div id='tasktittle'>
-                <span></span><span class='invisible'></span>
-                <input type='image' id='finish' class='editbtn' src="img/finish.png" width='20px'/>
-                <input type='image' id='edit' class='editbtn' src="img/edit.png" width='20px'/>
-                <input type='text' id='edititle' class='edittask'/>
-            </div>
-            <div id='taskdate'>
-                <span></span>
-                <input type='text' id='editdate' class='edittask'/>
-            </div>
-            <div id='tasktext'>
-                <span></span>	
-                <textarea id="edittext" class='edittask'></textarea> 
-                <input type='submit' id='cancel' class='savebtn' value='取消'/>
-                <input type='submit' id='save' class='savebtn' value='保存'/>
-            </div>
-        </div>
-    </div>
-    <div id="popBox">
+        <div id="popBox" class="invisible">
             <p>请输入新建分类名称:<p>
             <input id='newclsname' class='newcls' type="text" value="" />
             <p>请选择父级分类:<p>
@@ -64,9 +75,10 @@
             <input class='newbtn' id='newconfirm' type="button" value="确认" />
             <input class='newbtn' id='newcancel' type="button" value="取消" />
         </div>   
-    <div id='mask' onselectstart="retrun false">
-    </div>
-    
-<script language="javascript" type="text/javascript" src="js/task3.js"></script>
-</body>
+        <div id='mask' class="invisible" onselectstart="retrun false">
+        </div>
+
+        <script language="javascript" type="text/javascript" src="js/task3.js"></script>
+        <script language="javascript" type="text/javascript" src="js/datasave.js"></script>
+    </body>
 </html>

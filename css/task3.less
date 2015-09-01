@@ -1,179 +1,224 @@
 @charset "utf-8";
 /* CSS Document */
 *{margin:0px; padding:0px; text-decoration:none;list-style-type:none;}
-body{
-	min-width:980px;
-	margin:0 auto;
-	.bc()}
+html,body{
+	min-width:580px;
+	height:100%;
+	width:100%;
+}
 h1{
 	.bc(#90F);
 	color:white;
-	padding:10px;
-}
-.mainframe{
-	.bc(#DADBF5);
-	#index{
-		.bc(#CCF);
-		border-right:solid grey 1px;
-		width:199px;
-		text-indent:10px;
-		font-size:16px;
-		line-height:30px;
-		position:absolute;
-	}
-
-}
-
-#allclass{
-	cursor:pointer;
-	em{
-		.invisible();
-	}
-}
-
-.project{
-	cursor:pointer;
-	img{
-		.imgpos(5px,5px);
-	}
-}
-
-.item{
-	.bc(#CCF);
-	input{
-		.invisible();
-	}
-}
-
-.onitem input{
-	width:20px;
-}
-
-.onproject img{
-	.imgpos(5px,5px)
-}
-.subclass img{
-	.imgpos(15px,3px)
-}
-.addbtn{
-	border-top:solid black 1px;
-	width:100%;
+	padding:20px 0;
+	text-indent:2em;
+	height:20px;
 	position:absolute;
-	bottom:0px;
-	right:0px;
+	top:0;
+	width:100%;
+	z-index:1;
+}
+#container{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	z-index:0;
+}
+.box{
+  height:60px;
+}
+.return{
+	display:none;
+}
+#index{
+	.bc(#CCF);
+	border-right:solid grey 1px;
+	width:199px;
+	height:100%;
+	font-size:16px;
 	line-height:30px;
-	img{
-		cursor:pointer;
+	float:left;
+	overflow:auto;
+	ul{
+		margin-left:5px;
 	}
 }
-
-#addclass{
-	margin-right:3px;
-	width:40px;
+.files1 span,#allitems{
+	cursor:pointer;
 }
-#addtask{
-	margin:0px 3px 0px 10px;
-	width:40px;
+.files2{
+	display:block;
+}
+
+.fileicon{
+	display:inline-block;
+	height:20px;
+	width:20px;
+	margin:0px 6px;
+	position:relative;
+	top:3px;
+	background-image:url("../img/file2.png");
+}
+.fileicon2{
+	.fileicon();
+	margin-left:10px;
+	background-image:url("../img/text2.png")
+}
+.delete{
+	display:inline-block;
+	height:15px;
+	width:15px;
+	background-image:url("../img/delete.png");
+	float:right;
+}
+.blockitem{
+	display:inline-block;
+	width:150px;
+}
+.adbtn{
+	cursor:pointer;
+	height:25px;
+	border-top:solid grey 1px;
+	padding:5px 0;
+	width:199px;
+	position:absolute;
+	bottom:0;
+	input{
+		margin:0 5px;
+		position:relative;
+		top:3px;
+	}
 }
 #middle{
+	.bc(#FFE1FF);
 	width:199px;
+	height:100%;
+	float:left;
 	border-right:solid grey 1px;
-	position:absolute;
-	left:200px;
-	.bc(#f8f9df);
-}
-#midbtn{
-	.bc(#D0E691);
 }
 .midbtn{
-	width:50px;
-	margin:10px 5px;
-	border:none;
-	.bc(#fff);
+	.bc(#5CACEE);
+	border: 1px solid #FFE1FF;
+	border-radius:10px;
+	color:white;
+	width:28.3333%;
+	margin:5px 1%;
+	&:hover{
+		cursor:pointer;
+		border: 1px solid #FFF68F;
+		.bc(#63B8FF);
+	}
 }
 #tasks{
-	.bc(#F8F9DF);
+	border-top:solid grey 1px;
+	overflow:auto;
+	height:100%-27px;
+	overflow:auto;
 }
-.task{
+.listdate{
+	padding:5px;
+	border-bottom: 1px solid grey;
+}
+.taskdone,.taskundone{
 	cursor:pointer;
-	em{
-		.invisible();
+	color:blue;
+	padding:5px;
+	&:hover{
+		.bc(#FFF0F5);
 	}
 }
-
-.taskdate{
-	.bc(#DAF3E2);
-	span{
-		padding-left:10px;
-	}
-	li{
-		.bc(#F8F9DF);
-		padding:3px 0px;
-		padding-left:15px;
-	}
+.taskundone{
+	cursor:pointer;
+	color:red;
 }
 
 #textright{
-	.bc(#e2f1f3);
-	position:absolute;
-	left:400px;
-}
-#tasktittle{
-	padding:0 50px 0 10px;
-	.bc(#A5E0EF);
-	line-height:40px;
-	height:40px;
-	.invisible{
-		.invisible();
+	.bc(#D1EEEE);
+	height:100%;
+	margin-left:400px;
+	div{
+		padding:5px;
 	}
-	.editbtn{
-		width:20px;
-		margin:10px;
+}
+.editbtn{
+	float:right;
+	border:none;
+	margin:0 20px;
+}
+.editdetail{
+	#edititle,#editdate{
+		width:50%;
+		margin-left:2%;
+		padding:3px;
+		display:inline-block;
+	}
+	.savebtn{
+		display:inline-block;
 		float:right;
-		.invisible();
+		margin-right:12%;
+		padding:5px 10px;
+		.bc(#4F94CD);
+		font-size:16px;
+		color:white;
+		border-radius:10px;
 	}
-
+	#edittext{
+		display:blcok;
+		width:80%;
+		padding:5px;
+		height:200px;
+		margin:2% 7%;
+	}
+	p,span,.editbtn{
+		display:none;
+	}
+	.textnote{
+		display:inline-block;
+	}
+	.textinfo{
+		display:block;
+	}
 }
 
-.edittask{
-	.invisible();
-	color:grey;
+.loadetail,.loadetaildone{
+	.editask,.savebtn{
+		display:none;
+	}
+	p{
+		display:block;
+	}
+	span{
+		display:inline-block;
+	}
+	.textnote,.textinfo{
+		display:none;
+	}
 }
 
-.invisible{
-	.invisible();
+.loadetail .editbtn{
+	display:inline-block;
 }
-
-#taskdate{
-	padding-left:10px;
-	.bc(#D3E7EF);
-	line-height:40px;
-	height:40px;
+.loadetaildone .editbtn{
+	display:none;
 }
 
 #tasktext{
 	padding:20px;
-	.bc(#E2F1F3);
-	.savebtn{
-		width:40px;
-		margin-top:20px;
-		margin-right:20px;
-		float:right;
-		.invisible();
-	}
+	margin-top:30px;
 }
 
-#popBox{
+.popBox{
 	padding:20px;
 	width:180px;
 	border:1px solid #cfcfcf;
 	box-shadow:2px 3px 0 rgba(190,190,190,0.3);
 	.bc(#FADEF9);
 	z-index:101;
-	.invisible();
-	position:fixed;
-    left:300px;
-    top:200px;
+	position:absolute;
+    left:50%;
+    top:40%;
+    margin-left:-90px;
+    margin-top:-50px;
     .newcls{
 		margin-bottom:10px;
 		width:170px;
@@ -182,10 +227,12 @@ h1{
 	.newbtn{
 		width:40px;
 		margin:10px 18px 0px;
+		padding:5px;
+		.bc(#EEE9BF);
 	}
 }
 
-#mask{
+.mask{
 	width:100%;
 	height:100%;
 	.bc(#000);
@@ -194,13 +241,12 @@ h1{
 	top:0px;
 	left:0px;
 	z-index:50;
-	.invisible();
 }
 
 .bc(@c:#fff){
 	background-color:@c;
 }
-.invisible(){
+.invisible{
 	display:none;
 }
 
